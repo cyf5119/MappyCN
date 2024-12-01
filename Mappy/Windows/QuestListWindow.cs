@@ -20,8 +20,8 @@ public class QuestListWindow : Window {
         new UnacceptedQuestsTabItem(),
     ]);
     
-    public QuestListWindow() : base("Mappy Quest List Window", new Vector2(300.0f, 500.0f)) {
-        AdditionalInfoTooltip = "Shows Quests for the zone you are currently in";
+    public QuestListWindow() : base("Mappy 任务列表窗口", new Vector2(300.0f, 500.0f)) {
+        AdditionalInfoTooltip = "显示您当前所在区域的任务";
     }
 
     public override void PreOpenCheck() {
@@ -43,7 +43,7 @@ public class QuestListWindow : Window {
 public unsafe class UnacceptedQuestsTabItem : ITabItem {
     private const float ElementHeight = 48.0f;
 
-    public string Name => "Unaccepted Quests";
+    public string Name => "未接受的任务";
     
     public bool Disabled => false;
     
@@ -74,7 +74,7 @@ public unsafe class UnacceptedQuestsTabItem : ITabItem {
             }
         }
         else {
-            const string text = "No quests available";
+            const string text = "暂无任务可接";
             var textSize = ImGui.CalcTextSize(text);
             ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X / 2.0f - textSize.X / 2.0f);
             ImGui.SetCursorPosY(ImGui.GetContentRegionAvail().Y / 2.0f - textSize.Y / 2.0f);
@@ -86,7 +86,7 @@ public unsafe class UnacceptedQuestsTabItem : ITabItem {
 public unsafe class AcceptedQuestsTabItem : ITabItem {
     private const float ElementHeight = 48.0f;
 
-    public string Name => "Accepted Quests";
+    public string Name => "已接受的任务";
     
     public bool Disabled => false;
     
@@ -123,7 +123,7 @@ public unsafe class AcceptedQuestsTabItem : ITabItem {
             }
         }
         else {
-            const string text = "No quests available";
+            const string text = "暂无任务可接";
             var textSize = ImGui.CalcTextSize(text);
             ImGui.SetCursorPosX(ImGui.GetContentRegionAvail().X / 2.0f - textSize.X / 2.0f);
             ImGui.SetCursorPosY(ImGui.GetContentRegionAvail().Y / 2.0f - textSize.Y / 2.0f);
